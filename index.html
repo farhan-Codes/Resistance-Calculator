@@ -43,7 +43,6 @@
     #options {
       display: flex;
       justify-content: space-evenly;
-      background: rebeccapurple;
       width: calc(100% - 50px);
       height: 120px;
       align-self: center;
@@ -66,9 +65,23 @@
       text-align: center;
       padding: 6px;
       border-radius: 10px;
+      position: relative;
     }
     .fa-caret-down{
       transition:transform .4s;
+    }
+    .Bands{
+      border:2px solid black;
+      border-top: none;
+      position: absolute;
+      width: calc(100% - 6px);
+      height:0px;
+      top:40px;
+      left: 3px;
+      padding: 2px;
+      transition:1s;
+      overflow: hidden;
+      opacity:0;
     }
     .value-box {
       width: 50px;
@@ -79,8 +92,14 @@
       justify-content: center;
       align-items: center;
     }
+    .show{
+      display: flex;
+    }
+    .hide{
+      display: none;
+    }
     .color-grid{
-        display:grid;
+        display:none;
         grid-template-rows: repeat(4,auto);
         grid-template-columns: repeat(3,auto);
         width: 130px;
@@ -146,21 +165,31 @@
       <div id="options">
         <div id="NOB">
           Number of Bands <i class="fa-solid fa-caret-down"></i>
+          <div class="Bands">
+          <input type="radio" id="B3" name="band-value" value="3" checked></input>
+          <label for="B3">3 Bands</label>
+          <input type="radio" id="B4" name="band-value" value="4"></input>
+          <label for="B4">4 Bands</label>
+          <input type="radio" id="B5" name="band-value" value="5"></input>
+          <label for="B5">5 Bands</label>
+          <input type="radio" id="B6" name="band-value" value="6"></input>
+          <label for="B6">6 Bands</label>
+        </div>
         </div>
         <!--Number of Bands-->
-        <div id="Digit1" class="value-box">
-          <span class="lbl">B1</span>
+        <div id="Digit1" class="value-box show">
+          <span class="lbl"></span>
           <div class="color-grid">
             <span id="black"></span><span id="brown"></span><span id="red"></span><span id="orange"></span><span id="yellow"></span><span id="green"></span
             ><span id="blue"></span id="violet"><span id="grey"></span><span id="white"></span><span id="gold"></span><span id="silver"></span
             >
           </div>
         </div>
-        <div id="Digit2" class="value-box"><span class="lbl"></span></div>
-        <div id="Digit3" class="value-box"><span class="lbl"></span></div>
-        <div id="Multiplier" class="value-box"><span class="lbl"></span></div>
-        <div id="Tolerance" class="value-box"><span class="lbl"></span></div>
-        <div id="Temparture" class="value-box"><span class="lbl"></span></div>
+        <div id="Digit2" class="value-box show"><span class="lbl"></span></div>
+        <div id="Digit3" class="value-box show"><span class="lbl"></span></div>
+        <div id="Multiplier" class="value-box show"><span class="lbl"></span></div>
+        <div id="Tolerance" class="value-box show"><span class="lbl"></span></div>
+        <div id="Temparture" class="value-box show"><span class="lbl"></span></div>
       </div>
       <div id="descBox">
         <div id="Image"></div>
@@ -172,4 +201,5 @@
     src="https://kit.fontawesome.com/6b2be9b003.js"
     crossorigin="anonymous"
   ></script>
+  <script src="script.js"></script>
 </html>
