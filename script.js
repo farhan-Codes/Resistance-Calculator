@@ -1,6 +1,7 @@
 class pHandler{
     constructor(){
         this.view_close_options();
+        this.view_color_grid();
     }
     view_close_options(){
         let nob = document.getElementById('NOB');
@@ -30,7 +31,6 @@ class pHandler{
             '5':[5],
             '6':[]
         }
-        try{
         hide_map[number_of_boxes].forEach((e)=>{
             value_boxes[e].classList.remove("show");
             value_boxes[e].classList.add("hide");
@@ -39,8 +39,16 @@ class pHandler{
         for(let i=0;i<visible_boxes.length;i++){
             visible_boxes[i].firstElementChild.innerText=`B${i+1}`;
         }
-        }catch{
-            null
+    }
+    view_color_grid(){
+        let value_boxes = document.querySelectorAll('.value-box');
+        let color_grid = document.createElement('div');
+        color_grid.className="color-grid";
+        color_grid.innerHTML='<span id="black"></span><span id="brown"></span><span id="red"></span><span id="orange"></span><span id="yellow"></span><span id="green"></span><span id="blue"></span id="violet"><span id="grey"></span><span id="white"></span><span id="gold"></span><span id="silver"></span>';
+        for(let boxes of value_boxes){
+            boxes.addEventListener('click',(e)=>{
+                e.currentTarget.appendChild(color_grid);
+            })
         }
     }
     }

@@ -99,7 +99,7 @@
       display: none;
     }
     .color-grid{
-        display:none;
+        display:grid;
         grid-template-rows: repeat(4,auto);
         grid-template-columns: repeat(3,auto);
         width: 130px;
@@ -166,30 +166,25 @@
         <div id="NOB">
           Number of Bands <i class="fa-solid fa-caret-down"></i>
           <div class="Bands">
-          <input type="radio" id="B3" name="band-value" value="3" checked></input>
+          <input type="radio" id="B3" name="band-value" value="3" checked  autocomplete="off"></input>
           <label for="B3">3 Bands</label>
-          <input type="radio" id="B4" name="band-value" value="4"></input>
+          <input type="radio" id="B4" name="band-value" value="4" autocomplete="off"></input>
           <label for="B4">4 Bands</label>
-          <input type="radio" id="B5" name="band-value" value="5"></input>
+          <input type="radio" id="B5" name="band-value" value="5" autocomplete="off"></input>
           <label for="B5">5 Bands</label>
-          <input type="radio" id="B6" name="band-value" value="6"></input>
+          <input type="radio" id="B6" name="band-value" value="6" autocomplete="off"></input>
           <label for="B6">6 Bands</label>
         </div>
         </div>
         <!--Number of Bands-->
         <div id="Digit1" class="value-box show">
-          <span class="lbl"></span>
-          <div class="color-grid">
-            <span id="black"></span><span id="brown"></span><span id="red"></span><span id="orange"></span><span id="yellow"></span><span id="green"></span
-            ><span id="blue"></span id="violet"><span id="grey"></span><span id="white"></span><span id="gold"></span><span id="silver"></span
-            >
-          </div>
+          <span class="lbl">B1</span>
         </div>
-        <div id="Digit2" class="value-box show"><span class="lbl"></span></div>
-        <div id="Digit3" class="value-box show"><span class="lbl"></span></div>
-        <div id="Multiplier" class="value-box show"><span class="lbl"></span></div>
-        <div id="Tolerance" class="value-box show"><span class="lbl"></span></div>
-        <div id="Temparture" class="value-box show"><span class="lbl"></span></div>
+        <div id="Digit2" class="value-box show"><span class="lbl">B2</span></div>
+        <div id="Digit3" class="value-box hide"><span class="lbl"></span></div>
+        <div id="Multiplier" class="value-box show"><span class="lbl">B3</span></div>
+        <div id="Tolerance" class="value-box hide"><span class="lbl"></span></div>
+        <div id="Temparture" class="value-box hide"><span class="lbl"></span></div>
       </div>
       <div id="descBox">
         <div id="Image"></div>
