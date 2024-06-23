@@ -2,7 +2,9 @@ class pHandler{
     constructor(){
         this.view_close_options();
         this.view_color_grid();
+        this.getBands()
     }
+
     view_close_options(){
         let nob = document.getElementById('NOB');
         let bdr = nob.lastElementChild;
@@ -22,6 +24,16 @@ class pHandler{
             }
         })
     }
+
+    getBands(){
+        let Nob_values = document.getElementsByName("band-value");
+        Nob_values.forEach(element => {
+            element.addEventListener("click",(e)=>{
+               this.pg_handler.display_Band_Box(e.target.value)
+            })
+        });
+    }
+
     display_Band_Box(number_of_boxes){
         let value_boxes = document.querySelectorAll('.value-box');
         value_boxes.forEach((e)=>{e.classList.remove("hide");e.classList.add("show");})
@@ -40,34 +52,29 @@ class pHandler{
             visible_boxes[i].firstElementChild.innerText=`B${i+1}`;
         }
     }
+
     view_color_grid(){
-        let value_boxes = document.querySelectorAll('.value-box');
+        let labels = document.querySelectorAll('.lbl');
         let color_grid = document.createElement('div');
         color_grid.className="color-grid";
         color_grid.innerHTML='<span id="black"></span><span id="brown"></span><span id="red"></span><span id="orange"></span><span id="yellow"></span><span id="green"></span><span id="blue"></span id="violet"><span id="grey"></span><span id="white"></span><span id="gold"></span><span id="silver"></span>';
-        for(let boxes of value_boxes){
-            boxes.addEventListener('click',(e)=>{
-                e.currentTarget.appendChild(color_grid);
+        for(let label of labels){
+            label.addEventListener('click',(e)=>{
+                e.currentTarget.parentElement.appendChild(color_grid);
+                this.gcv()
+            })
+        }
+    }
+
+    gcv(){
+        let colors = document.querySelectorAll(".color-grid span");
+        for(let color of colors){
+            color.addEventListener('click',(e)=>{
+                console.log(e.currentTarget.id)
             })
         }
     }
     }
 
 
-class dHandler{
-    constructor(page_handler_object){
-        this.pg_handler = page_handler_object;
-        this.getBands();
-    }
-    getBands(){
-        let Nob_values = document.getElementsByName("band-value");
-        Nob_values.forEach(element => {
-            element.addEventListener("click",(e)=>{
-               this.pg_handler.display_Band_Box(e.target.value)
-            })
-        });
-    }
-}
-
 myPage_handler = new pHandler();
-myData_handler = new dHandler(myPage_handler)
