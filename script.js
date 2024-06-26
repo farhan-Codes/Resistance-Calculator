@@ -29,7 +29,7 @@ class pHandler{
         let Nob_values = document.getElementsByName("band-value");
         Nob_values.forEach(element => {
             element.addEventListener("click",(e)=>{
-               this.pg_handler.display_Band_Box(e.target.value)
+               this.display_Band_Box(e.target.value)
             })
         });
     }
@@ -54,27 +54,20 @@ class pHandler{
     }
 
     view_color_grid(){
-        let labels = document.querySelectorAll('.lbl');
+        let boxes = document.querySelectorAll('.value-box');
         let color_grid = document.createElement('div');
         color_grid.className="color-grid";
         color_grid.innerHTML='<span id="black"></span><span id="brown"></span><span id="red"></span><span id="orange"></span><span id="yellow"></span><span id="green"></span><span id="blue"></span id="violet"><span id="grey"></span><span id="white"></span><span id="gold"></span><span id="silver"></span>';
-        for(let label of labels){
-            label.addEventListener('click',(e)=>{
+        let colors = color_grid.querySelectorAll('span');
+        for(let box of boxes){
+            box.firstElementChild.addEventListener('click',(e)=>{
                 e.currentTarget.parentElement.appendChild(color_grid);
-                this.gcv()
             })
         }
-    }
-
-    gcv(){
-        let colors = document.querySelectorAll(".color-grid span");
-        for(let color of colors){
-            color.addEventListener('click',(e)=>{
-                console.log(e.currentTarget.id)
-            })
+        for (let color of colors) {
+            color.addEventListener('click',e => {console.log(e.currentTarget.id)})
         }
     }
-    }
-
+}
 
 myPage_handler = new pHandler();
