@@ -80,25 +80,28 @@
       left: 3px;
       padding: 2px;
       transition:1s;
-      overflow: hidden;
+      overflow-y:scroll;
       opacity:0;
+      scrollbar-width: none;
     }
     .value-box {
       width: 50px;
       height: 50px;
-      border: 2px solid black;
+      border: 2px solid gray;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .lbl{
-      background-color: red;
       width:inherit;
       height:99%;
       text-align: center;
       padding:26% 0px;
       z-index: 1;
+      color:rgb(169, 163, 163);
+      font-weight:500;
+      font-size:large;
     }
     .show{
       display: flex;
@@ -174,14 +177,14 @@
         <div id="NOB">
           Number of Bands <i class="fa-solid fa-caret-down"></i>
           <div class="Bands">
-          <input type="radio" id="B3" name="band-value" value="3" checked  autocomplete="off"></input>
-          <label for="B3">3 Bands</label>
-          <input type="radio" id="B4" name="band-value" value="4" autocomplete="off"></input>
-          <label for="B4">4 Bands</label>
-          <input type="radio" id="B5" name="band-value" value="5" autocomplete="off"></input>
-          <label for="B5">5 Bands</label>
-          <input type="radio" id="B6" name="band-value" value="6" autocomplete="off"></input>
-          <label for="B6">6 Bands</label>
+          <input type="radio" id="B3" name="band-value" value="3" checked  autocomplete="off">
+          <label for="B3">3 Bands</label><br>
+          <input type="radio" id="B4" name="band-value" value="4" autocomplete="off">
+          <label for="B4">4 Bands</label><br>
+          <input type="radio" id="B5" name="band-value" value="5" autocomplete="off">
+          <label for="B5">5 Bands</label><br>
+          <input type="radio" id="B6" name="band-value" value="6" autocomplete="off">
+          <label for="B6">6 Bands</label><br>
         </div>
         </div>
         <!--Number of Bands-->
