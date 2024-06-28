@@ -49,14 +49,6 @@
       margin: 40px;
       padding: 22px 0px;
     }
-    #descBox {
-      display: flex;
-      width: calc(100% - 50px);
-      height: 200px;
-      background-color: red;
-      align-self: center;
-      margin: 35px;
-    }
     #NOB {
       width: 200px;
       height: 45px;
@@ -66,6 +58,8 @@
       padding: 6px;
       border-radius: 10px;
       position: relative;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .fa-caret-down{
       transition:transform .4s;
@@ -105,6 +99,7 @@
     }
     .show{
       display: flex;
+      background: transparent;
     }
     .hide{
       display: none;
@@ -125,50 +120,78 @@
         border: .2px rgb(167, 184, 184) solid;
         scrollbar-width:none;
         gap: 2px;
-    }
-    .color-grid span{
+      }
+      .color-grid span{
         width: 40px;
         height: 40px;
         border: 1px solid rgb(157, 214, 243);
         border-radius: 10px;
         margin:1px 0px;
-    }
-    #black{
+      }
+      #black{
         background-color: black;
-    }
-    #brown{
+      }
+      #brown{
         background-color: brown;
-    }
-    #red{
+      }
+      #red{
         background-color: red;
-    }
-    #orange{
+      }
+      #orange{
         background-color: orange;
-    }
-    #yellow{
+      }
+      #yellow{
         background-color: yellow;
-    }
-    #green{
+      }
+      #green{
         background-color: green;
-    }
-    #blue{
+      }
+      #blue{
         background-color:blue;
-    }
-    #violet{
+      }
+      #violet{
         background-color: violet;
-    }
-    #grey{
+      }
+      #grey{
         background-color:gray;
-    }
-    #white{
+      }
+      #white{
         background-color:white;
-    }
-    #gold{
+      }
+      #gold{
         background-color: gold;
-    }
-    #silver{
+      }
+      #silver{
         background-color:silver;
-    }
+      }
+      #descBox {
+        display: flex;
+        width: calc(100% - 50px);
+        height: 200px;
+        background-color: red;
+        justify-content: space-between;
+        align-self: center;
+        margin: 35px;
+      }
+      #Image{
+        width:calc(100% - 70%);
+        height:calc(100% - 20px);
+        border: 2px solid black;
+        margin:10px 30px;
+        background: url("https://media.rs-online.com/image/upload/v1482295262/F2141951-01.jpg");
+        background-size:50%;
+        background-repeat: no-repeat;
+        background-position:center;
+      }
+      #desc{
+        width:30%;
+        height:calc(100% - 20px);
+        border: 2px solid black;
+        margin:10px 30px;
+        font-size:1.6em;
+        text-align: center;
+        padding:30px 0px;
+      }
   </style>
   <body>
     <section id="Frame">
@@ -198,8 +221,8 @@
         <div id="Temparture" class="value-box hide"><span class="lbl"></span></div>
       </div>
       <div id="descBox">
-        <div id="Image"></div>
-        <div id="desc"></div>
+        <img src="https://media.rs-online.com/image/upload/v1482295262/F2141951-01.jpg" alt="Resistor Picture" id="Image">
+        <div id="desc">Resitance:100 Ω<br>Tolerance: ± 2% <br>Temparture: 220ppm/k</div>
       </div>
     </section>
   </body>
