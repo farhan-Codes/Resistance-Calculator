@@ -11,6 +11,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      --fg:white;
     }
     body {
       width: 100vw;
@@ -20,13 +21,15 @@
       justify-content: center;
     }
     #Frame {
-      width: calc(100vw - 10%);
-      height: calc(100vh - 25%);
+      width: 1000px;
+      height: 562px;
       border: 1px solid rgb(150, 146, 146);
-      background-color: whitesmoke;
+      background:url("https://static.vecteezy.com/system/resources/previews/027/052/565/non_2x/computer-futuristic-high-tech-circuit-board-with-microcircuits-and-electronic-chips-with-transistors-and-resistors-ai-generated-free-photo.jpg");
       border-radius: 10px;
       display: flex;
       flex-direction: column;
+      background-repeat: no-repeat;
+      background-size:contain;
     }
     #logo {
       width: 240px;
@@ -48,11 +51,13 @@
       align-self: center;
       margin: 40px;
       padding: 22px 0px;
+      color: var(--fg);
+      text-shadow: 0px 0px black, 0px 0px black ;
     }
     #NOB {
       width: 200px;
       height: 45px;
-      border: 2px solid black;
+      border: 2px solid var(--fg);
       font-size: 20px;
       text-align: center;
       padding: 6px;
@@ -65,7 +70,7 @@
       transition:transform .4s;
     }
     .Bands{
-      border:2px solid black;
+      border:2px solid var(--fg);
       border-top: none;
       position: absolute;
       width: calc(100% - 6px);
@@ -81,7 +86,7 @@
     .value-box {
       width: 50px;
       height: 50px;
-      border: 2px solid gray;
+      border: 2px solid var(--fg);
       position: relative;
       display: flex;
       justify-content: center;
@@ -93,7 +98,7 @@
       text-align: center;
       padding:26% 0px;
       z-index: 1;
-      color:rgb(169, 163, 163);
+      color:black;
       font-weight:500;
       font-size:large;
     }
@@ -114,12 +119,13 @@
         border-radius: 10px;
         position: absolute; 
         justify-content: space-around;
-        background-color:azure;
+        background-color:transparent;
         padding: .4px 0px;
         z-index: 2;
         border: .2px rgb(167, 184, 184) solid;
         scrollbar-width:none;
         gap: 2px;
+        backdrop-filter: blur(20px);
       }
       .color-grid span{
         width: 40px;
@@ -149,8 +155,8 @@
       #blue{
         background-color:blue;
       }
-      #violet{
-        background-color: violet;
+      #purple{
+        background-color:purple;
       }
       #grey{
         background-color:gray;
@@ -168,10 +174,10 @@
         display: flex;
         width: calc(100% - 50px);
         height: 200px;
-        background-color: red;
         justify-content: space-between;
         align-self: center;
         margin: 35px;
+        color: var(--fg);
       }
       #Image{
         width:calc(100% - 70%);
@@ -186,7 +192,7 @@
       #desc{
         width:30%;
         height:calc(100% - 20px);
-        border: 2px solid black;
+        border: 2px solid var(--fg);
         margin:10px 30px;
         font-size:1.6em;
         text-align: center;
@@ -200,9 +206,9 @@
         <div id="NOB">
           Number of Bands <i class="fa-solid fa-caret-down"></i>
           <div class="Bands">
-          <input type="radio" id="B3" name="band-value" value="3" checked  autocomplete="off">
+          <input type="radio" id="B3" name="band-value" value="3" autocomplete="off">
           <label for="B3">3 Bands</label><br>
-          <input type="radio" id="B4" name="band-value" value="4" autocomplete="off">
+          <input type="radio" id="B4" name="band-value" value="4" checked autocomplete="off">
           <label for="B4">4 Bands</label><br>
           <input type="radio" id="B5" name="band-value" value="5" autocomplete="off">
           <label for="B5">5 Bands</label><br>
@@ -211,18 +217,18 @@
         </div>
         </div>
         <!--Number of Bands-->
-        <div id="Digit1" class="value-box show">
-          <span class="lbl">B1</span>
+        <div id="Digit1" class="value-box">
+          <span class="lbl"></span>
         </div>
-        <div id="Digit2" class="value-box show"><span class="lbl">B2</span></div>
-        <div id="Digit3" class="value-box hide"><span class="lbl"></span></div>
-        <div id="Multiplier" class="value-box show"><span class="lbl">B3</span></div>
-        <div id="Tolerance" class="value-box hide"><span class="lbl"></span></div>
-        <div id="Temparture" class="value-box hide"><span class="lbl"></span></div>
+        <div id="Digit2" class="value-box"><span class="lbl"></span></div>
+        <div id="Digit3" class="value-box"><span class="lbl"></span></div>
+        <div id="Multiplier" class="value-box"><span class="lbl"></span></div>
+        <div id="Tolerance" class="value-box"><span class="lbl"></span></div>
+        <div id="Temparture" class="value-box"><span class="lbl"></span></div>
       </div>
       <div id="descBox">
-        <img src="https://media.rs-online.com/image/upload/v1482295262/F2141951-01.jpg" alt="Resistor Picture" id="Image">
-        <div id="desc">Resitance:100 Ω<br>Tolerance: ± 2% <br>Temparture: 220ppm/k</div>
+        <img src="https://projectpoint.in/image/cache/catalog/CFR-1W-3M3-672x504.jpg" alt="Resistor Picture" id="Image">
+        <div id="desc"></div>
       </div>
     </section>
   </body>
