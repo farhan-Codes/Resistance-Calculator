@@ -130,6 +130,7 @@ class pHandler{
         }
         else{
             Resistance=(((Values[d1][0]*10)+Values[d2][1])*Values[m][3]);
+            Tolerance=20;
             if(Bands==4){
                 Tolerance = Values[tol][4];
             }
