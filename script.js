@@ -80,12 +80,6 @@ class pHandler{
             color.addEventListener('click',e => {
                 let shown_boxes = document.querySelectorAll(".show");
                 e.currentTarget.parentElement.parentElement.style.background=`${e.currentTarget.id}`;
-                if(e.currentTarget.id=='black'){
-                    e.currentTarget.parentElement.previousElementSibling.style.color="white"; 
-                }
-                else{
-                    e.currentTarget.parentElement.previousElementSibling.style.color="black"; 
-                }
                 cur_box=(e.currentTarget.parentElement.previousElementSibling.innerText);
                 if(prev_box!=cur_box){
                     filled_boxes++;
